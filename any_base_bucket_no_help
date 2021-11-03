@@ -18,7 +18,7 @@ if count // base**bi == 0:
 while bi >= 0:
 	if count // base**bi > 0:
 		bv = str(bv) + str(count // base**bi)
-		count = count - ((base**bi)*(count//base**bi))
+		count = count - ((base**bi)*(count//base**bi)) #*the golden piece...the count must be changed not just by a subtraction, but by the subtraction multipled by the floor division. english g00d at 1am
 		bi -= 1
 		print('c1',bv,count,bi,str(count // base**bi))
 		continue

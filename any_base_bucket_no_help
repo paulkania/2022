@@ -1,5 +1,5 @@
-base = 4
-count = 12
+base = 16
+count =65
 bi = 0
 bv = str('')
 total =''
@@ -13,19 +13,23 @@ while base**bi < count:
 if count // base**bi == 0:
 	bv = str(bv)+str(0)
 	bi -=1
+	print('1st edge case',bv)
 
-while bi >= 0 && count != 0:
+while bi >= 0:
 	if count // base**bi > 0:
 		bv = str(bv) + str(count // base**bi)
-		count = count - base**bi
+		count = count - ((base**bi)*(count//base**bi))
 		bi -= 1
-		print('c1',bv,count,base,bi)
+		print('c1',bv,count,bi,str(count // base**bi))
+		continue
 	
 	if count // base**bi == 0:
 		bv = str(bv) + str(0)
 		bi -= 1
-		print('case2',bv,count,base,bi)
+		print('case2',bv,count,bi)
+		continue #not necessary but good for uniformity.
 
 
-
+ans = int(bv)
 print(bv)
+print('ans',ans)

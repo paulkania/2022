@@ -1,0 +1,21 @@
+https://app.hackthebox.com/challenges/228
+
+enc_hex='6e0a9372ec49a3f6930ed8723f9df6f6720ed8d89dc4937222ec7214d89d1e0e352ce0aa6ec82bf622227bb70e7fb7352249b7d893c493d8539dec8fb7935d490e7f9d22ec89b7a322ec8fd80e7f8921'
+
+n=2
+bytes=[]
+for i in range(0,len(enc_hex),n):
+  byte=enc_hex[i:i+n]
+  bytes.append(int(byte,16))
+
+decry=[]
+for i in bytes:
+  for j in range(0,256):
+    if(((j*123)+18)%256) == i:
+      decry.append(chr(j))
+
+ans=''
+for i in decry:
+  ans+=str(i)
+print(ans)
+#1 w4n7 2 m457urb473

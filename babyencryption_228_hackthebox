@@ -1,4 +1,26 @@
-https://app.hackthebox.com/challenges/228
+#1st solution - dictionary solution
+
+enc_hex='6e0a9372ec49a3f6930ed8723f9df6f6720ed8d89dc4937222ec7214d89d1e0e352ce0aa6ec82bf622227bb70e7fb7352249b7d893c493d8539dec8fb7935d490e7f9d22ec89b7a322ec8fd80e7f8921'
+
+n=2
+bytes=[]
+for i in range(0,len(enc_hex),n):
+  byte=enc_hex[i:i+n]
+  bytes.append(int(byte,16))
+
+d={}
+for i in range(0,257):
+  j = (((i*123)+18)%256)
+  d[j]=i #j is the encrypted byte, which we are given, and we know the i is week. i is the unencrypted byte.
+
+ans=''
+for i in bytes:
+  ans+=(chr(d[i]))
+
+print(ans)
+
+#-----------------------
+# 2nd solution -> double for loop.
 
 enc_hex='6e0a9372ec49a3f6930ed8723f9df6f6720ed8d89dc4937222ec7214d89d1e0e352ce0aa6ec82bf622227bb70e7fb7352249b7d893c493d8539dec8fb7935d490e7f9d22ec89b7a322ec8fd80e7f8921'
 
@@ -18,5 +40,3 @@ ans=''
 for i in decry:
   ans+=str(i)
 print(ans)
-#Th3 nucl34r w1ll 4rr1v3 0n fr1d4y.
-#HTB{l00k_47_y0u_r3v3rs1ng_3qu4710n5_c0ngr475}

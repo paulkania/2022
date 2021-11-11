@@ -1,3 +1,4 @@
+#test comment
 base = 16
 count =65
 bi = 0
@@ -22,7 +23,7 @@ while bi >= 0:
 		bi -= 1
 		print('c1',bv,count,bi,str(count // base**bi))
 		continue
-	
+
 	if count // base**bi == 0:
 		bv = str(bv) + str(0)
 		bi -= 1

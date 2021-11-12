@@ -1,0 +1,30 @@
+fn main() {
+    let rectangle1 = Rectangull {width: 20, length: 4};
+
+    println!("{}",rectangle(3,5));
+    println!("{}",tuplerect(Rect(8,4)));
+    println!("{}",area2(&rectangle1));
+
+}
+//meth 1
+fn rectangle(x:i32 , y:i32) -> i32 {
+    let a = x*y;
+    a
+}
+
+//meth 2
+struct Rect(u32,u32);
+
+fn tuplerect(rect: Rect) -> u32{
+    rect.0 * rect.1
+}
+
+// meth3
+struct Rectangull{
+    width: u32,
+    length: u32,
+}
+
+fn area2(rectangle: &Rectangull) -> u32{
+    rectangle.width * rectangle.length
+}

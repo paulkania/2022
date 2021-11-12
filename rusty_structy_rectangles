@@ -1,12 +1,13 @@
 fn main() {
-    let rectangle1 = Rectangull {width: 20, length: 4};
+    let rectylocal = Rectangull {width: 20, length: 4};
 
     println!("{}",rectangle(3,5));
     println!("{}",tuplerect(Rect(8,4)));
-    println!("{}",area2(&rectangle1));
+    println!("{}",area2(Rectangull{length:69, width:10,}));
+    println!("{}",area2(rectylocal));
 
 }
-//meth 1
+//meth 1 - naive
 fn rectangle(x:i32 , y:i32) -> i32 {
     let a = x*y;
     a
@@ -25,6 +26,6 @@ struct Rectangull{
     length: u32,
 }
 
-fn area2(rectangle: &Rectangull) -> u32{
+fn area2(rectangle: Rectangull) -> u32{
     rectangle.width * rectangle.length
 }

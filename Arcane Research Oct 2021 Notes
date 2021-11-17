@@ -1,0 +1,185 @@
+https://www.research.arcane.no/the-state-of-lightning
+
+The notes herein gather only what the author doesn’t already know, and serves more as a series of pointers to the paper, rather than a full-blown summary.
+
+Page 1,2 / 60
+Oct 2021 - collaboration between arcane research & opennode
+
+Page 3
+Liz Stark - We are reaching the inflection point of LN users
+acknowledgements
+
+Page 4 - 11 : Summary
+you want throughput? we got throughput
+journey started with poon and dryja in 2015
+LN ecosystem can be divided in 6 sectors
+technical foundation
+implementations: LND, C-Lightning, electrum
+routing nodes: acinq
+node mgmt: umbrel, greenlight
+liquidity: bitrefill
+Payments, wallets, savings
+wallets: breez, strike(el salvador), bottlepay
+merchant payments: breez, btcpay
+payment cards, saving in btc, btc economy
+finance
+lightning native: immature 
+dual service: bitfinex, paxful
+rewards & earnings
+fold, tippin.me
+gaming & gambling:
+zebedee, satoshi’s games
+other 
+social apps -imaature
+ecomm - immature
+3rd layer -immature
+ giftcards - bitrefill
+
+Lightning use phases (experimenters & early adopters)
+jan - july 2018: baby money, experiments
+july 2018 to july 2019: more experiments, more robust, less wild west. 
+july 2019: no change in channel capacity: steady experimenting y’all.
+jan 21 - present (nov 2021) - early adopters; el salvador legal tender.
+wallet payment volume growth far exceeding channel capacity growth
+sept 14: the 7M paxful users now lightning integrated
+sept 23: 186M twitter users can tip via lightning
+akin to reddit onchain tipping in bitcoins early years
+Projecting S curves for ridiculous growth
+90% of el salvadorians will have access in 4 years time.
+Potential followers to el salvador
+total 850M people, 650M currently unbanked
+have poor banking access
+high remittance payment
+strong dependance on (fraying) USD
+
+Micropayments - they & I am stoked on streaming money. wow.
+gaming rewards accounted for 4k tx.vol on 189k tx’s, implying 0.02$/tx.
+streaming music, content, betting on plays (gaming)
+privately
+estimate:700M gaming,video,audio LN users by 2030: assumptions outlined in main-report
+& 364T LN-tx per year by 2030
+reminder that the internet age: gotta zuckerberg em (mf,break things)
+5B internet users, 60B Whatsapp msg/day, 376B emails per day in 2025
+
+Pg 12: opennode ad
+pg 13: TOC
+pg 14:
+the story so far
+the throughput problem
+pg 15
+onchain == radio (expensive broadcast to all nodes) && LN == p2p (efficient unicast to node x via node a,b,c,n).
+pg 16
+how ln works
+creating a channel, layer 2, alice & bob
+pg 17 - 19
+describing the rube goldberg machine that is lightning payments (bing,bong,boop)
+HTLCs prevent node in the chain to keep funds.
+pg 20
+layer 2 has it’s own set of ledger-books. only channel opens and closes require block-space/chain-space
+
+1.4 pg 21
+Aug 2021 - 100k LN users
+remember the first couple LN nodes a few years ago (they all hated roger ver, who is now irrelevant :)
+17k nodes, 74k unique channels, 3kbtc, ~120M$
+
+pg 22
+the first 11 months:
+20BTC -> 1104 BTC
+andreas brekken (4 medium posts) - accounted for 50% of the network in early exp-phase.
+LNBIG does a brekken ~6 months later
+still a relevant hub today
+Hodlnaut and the torch (it was epic and i wanted it but was still afraid of LN-CLI)
+i didnt know/ probably forgot that reid hoffman Paypal COO & LinkedIn Co-founder handled the torch
++ fidelity + iranian (us sanction drama)
+282 passes, donated 0.04btc to btc-venezuela
+pg 23
+fast-forward to 2021 (interim was development times, zebedee, satoshi games, proof of concepts, satoshi.place
+2021 growth: 1k to 3k BTC
+el salvador: june 5 : the announcement, sept 7: the implementation
+it’s kind of unbelievable, i haven’t sure i’ve grokked this reality yet tbh. seems not real, far-fetched.
+70k public channels + reminder that there are many private channels
+bitmex on Jan2020 said 30% channels private
+could be x>30% now
+pg 24
+fig 20 is awesome
+describes a spike in onchain fees followed by a increase in LN channels and a dying off of onchain fees (hopefully not a permanent die-off)
+when on-chain fees are steadily low, the incentive to use LN is also lower
+counterpoint: ln will always be more user-friendly (confirmations, ux)
+pg 25
+NEW CONCEPT: block-days saved
+sept 2021: LN did ~663k tx, which is 332 blocks, which would take 2.3 days. therefore in sept2021, LN took 2.3 days of pressure off of the chain.
+caveat: many of these LN-tx are micropayments, and would be too expensive for the chain, even at 0.01$ fees.
+how much pressure relief is ideal? (in 2030 the block days saved will be well more than the days in a month, but will there still be enough chain-traffic to subsidize mining. this is only an issue once block rewards are not appealing enough in themselves.
+pg 26
+hubs are a convenience, and not strictly necessary, ergo privacy, centralization are non-issues
+New concept: cut channels, cut nodes, hovering at 10 and 8% respectively
+channels/nodes whos removal would disconnect entirely two parts of the network.
+pg 27
+measuring node clustering//clique-y-ness
+peers are becoming more rational when opening new channels.
+low barriers to entry to become a hub (capital, time) also point to centralization being a non issue
+pg 28,29 - part 2 - who does the LN ecosystem consist of
+repeats the the ecosystem portion of the summary notes
+
+pg 30-31
+intro to the technical founders
+LN nodes: 87LND, 11C-L, 2Eclair, 0.1other
+pg 32
+fig 25 is great: public node percentage reachable per extra hop
+1hop (to hub: LNBIG)
+2nd hop -> 281nodes. 2% of public nodes
+3rd hop - 20-40% public nodes
+4th - 70-90% nodes
+5th onwards there are poorly connected nodes so it is basically and asymptotic fn
+“maintaining and managing your own node is still a technical challenge”
+channels can have a tendency to bleed out. options are to
+close and re-open a channel
+use a liquidity service (thor?)
+
+pg 36.
+Bitfinex Fig 26. LN dep& withdrawals were for token sums -- 34%tx.count & 0.45%tx.value 
+non-controversial opinion(?): LN is still very much used experimentally for most, if not a subset, of uesers
+experimenting with derivative markets in LN-natively is happening (LN Markets)
+
+pg 38
+fig 28 - LN:chain payment ratio of bitrefill
+elsalvador: 90%/ Bresil: 40, Nigeria 30, S.Afrique: 20, downstream:10% 
+
+pg 39 - part 3 - evolution of LN, gradually then suddenly?
+private LN company & wallet data tell us
+160k easy2use LN-wallets
+65k-130k unique e2use wallet-hodlers
+(pg 41) - “agg incoming and outgoing tx.values were ~$5M
+$ -2.4M payments, 1.8M between wallets, 0.7M incoming tx
+count - 43k, 60k, 240k(playing with cents) respectively (fig 33)
+pg 40
+Node concentration:
+US 8.5%, Fr 4, Germ 2.5, Can 2, NL 1, UK .5, Swis 0.4, Sngapor&Ital&Nipon .25
+shoutout to nigeria, philippines, bulgaria
+pg 41 - appended to pg 39
+
+pg 42
+as per the data in pg 39
+the payments were mostly trading and privacy services (750k, 736k), gift cards 230k, gamebling 147k, merchpayments 135k, other 413k
+pg 43
+gaming rewards 188k.tx.c for 4k.tx.$
+pg 44
+$/tx.count ratio is increasing. excidence for exponential increase.
+pg 45 - the futur
+oh, you’re still reading? :P
+lightning will be invisible, like tcp - starks
+
+chivo (el salv wallet) == ‘kid’
+
+pg 52 
+infographic describing the ubanked and total population of nations without their own currency, pegged currencies, or defacto USD nations. totally 854M, 652M unbanked.
+panama and paraguay have twittering/signalling politicians
+pg 54
+reminder that remittance world is ripe for disruption
+pg 55 -57
+more details on streaming money opportunity & market sizes and those markets’ projected growth
+pg 58-60
+repeating internet horseless carriage mantra
+disclaimer
+endpage
+YAY!

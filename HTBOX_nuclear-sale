@@ -1,0 +1,41 @@
+#XOR function
+
+#encrypt= #0x6b65813f4fe991efe2042f79988a3b2f2559d358e55f2fa373e53b1#965b5bb2b175cf039
+#print(encrypt,type(encrypt))
+#
+#x= #bytearray.fromhex("6b65813f4fe991efe2042f79988a3b2f2559d3#58e55f2fa373e53b1965b5bb2b175cf039").decode()
+#print(x)
+
+def chunker(ct,kt):
+
+  ctext=ct
+  ktext=kt
+  keylen=len(ktext)
+  
+  clist=[]
+  while ctext:
+    clist.append(ctext[0:keylen])
+    ctext=ctext[keylen:]
+  
+  return(clist)
+
+ct='1011011110000110'
+kt='1111'
+clist = chunker(ct,kt)
+
+answerlist=[]
+answertxt=''
+for chunk in clist:
+  print('newchunk')
+  counter=0
+  for ord in chunk:
+    print(ord,chunk,chunk[counter],type(chunk[counter]),counter, kt[counter],type(ord),type(kt[counter]))
+    if int(ord)+int(kt[counter]) == 1:
+      answertxt+='1'
+    else:
+      answertxt+='0'
+    counter+=1
+  answerlist.append(answertxt)
+  answertxt=''
+
+print(answerlist)
